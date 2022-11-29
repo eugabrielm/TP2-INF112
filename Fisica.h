@@ -1,8 +1,9 @@
 #pragma once
 #include <iostream>
+#include "Usuario.h"
 #include <string>
 
-class Fisica
+class Fisica: public Usuario
 {
 private:
     std::string CPF;
