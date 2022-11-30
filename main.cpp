@@ -10,9 +10,8 @@ std::vector<Juridico> pessoa_juridico;
 int main()
 {
     char c = 0;
-    std::string _nome =  "";
+    std::string _nome = "";
     std::string _aux;
-
 
     while (c != 'n')
     {
@@ -26,7 +25,7 @@ int main()
             break;
         }
 
-        if (c == 's')
+        else if (c == 's')
         {
             std::cout << "Digite seu nome completo: ";
             std::cin.ignore();
@@ -35,7 +34,8 @@ int main()
             std::cout << "\nSelecione uma opcao: " << std::endl;
             std::cout << std::endl;
             std::cout << "1. Pessoa Fisica" << std::endl;
-            std::cout << "2. Pessoa Juridica\n" << std::endl;
+            std::cout << "2. Pessoa Juridica\n"
+                      << std::endl;
             std::cin >> c;
 
             if (c == '1')
@@ -43,7 +43,7 @@ int main()
                 std::cout << "\nDigite seu CPF: ";
                 std::cin >> _aux;
 
-                pessoa_fisica.push_back(Fisica(_nome, _aux));   
+                pessoa_fisica.push_back(Fisica(_nome, _aux));
             }
 
             if (c == '2')
@@ -53,10 +53,8 @@ int main()
 
                 pessoa_juridico.push_back(Juridico(_nome, _aux));
             }
-
         }
     }
 
     return 0;
 }
-
