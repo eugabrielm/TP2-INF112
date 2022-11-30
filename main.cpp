@@ -1,6 +1,11 @@
 #include <iostream>
 #include "./PessoaJuridica/Juridico.h"
 #include "./Usuario/Usuario.h"
+#include "./PessoaFisica/Fisica.h"
+#include <vector>
+
+std::vector<Fisica> pessoa_fisica;
+std::vector<Juridico> pessoa_juridico;
 
 int main()
 {
@@ -33,13 +38,22 @@ int main()
             std::cout << "2. Pessoa Juridica\n" << std::endl;
             std::cin >> c;
 
+            if (c == '1')
+            {
+                std::cout << "\nDigite seu CPF: ";
+                std::cin >> _aux;
+
+                pessoa_fisica.push_back(Fisica(_nome, _aux));   
+            }
+
             if (c == '2')
             {
                 std::cout << "\nDigite seu CNPJ: ";
                 std::cin >> _aux;
 
-                Juridico user(_nome, _aux);
+                pessoa_juridico.push_back(Juridico(_nome, _aux));
             }
+
         }
     }
 
