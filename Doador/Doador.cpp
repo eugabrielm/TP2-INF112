@@ -1,4 +1,4 @@
-#include <iostream>
+/* #include <iostream>
 #include "Doador.h"
 #include <vector>
 #include "Residuos.h"
@@ -9,4 +9,4 @@ numero_doacoes = n;
 for(int i = 0; i < n ; i++)
 
 }
-
+ */
