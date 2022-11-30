@@ -2,12 +2,12 @@
 #include <iostream>
 #include "../Usuario/Usuario.h"
 #include <string>
+#include <vector>
 
 class Fisica: public Usuario
 {
 private:
     std::string _CPF;
-
 public:
     // Construtor
     Fisica(std::string nome, std::string CPF);

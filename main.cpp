@@ -2,22 +2,43 @@
 #include "./PessoaJuridica/Juridico.h"
 #include "./Usuario/Usuario.h"
 #include "./PessoaFisica/Fisica.h"
+#include "./Residuos/Residuos.h"
 #include <vector>
 
-std::vector<Fisica> pessoa_fisica;
-std::vector<Juridico> pessoa_juridico;
+std::vector<Fisica> doador_fisica;
+std::vector<Fisica> receptor_fisica;
+std::vector<Juridico> doador_juridico;
+std::vector<Juridico> receptor_juridico;
+std::vector<Residuos> tipos_de_residuos;
+
+void exibir_lista_residuos(){ //ainda nao foi terminado a funcao.
+    tipos_de_residuos.push_back(Residuos("Metais"));
+    tipos_de_residuos.push_back(Residuos("Papeis"));
+    tipos_de_residuos.push_back(Residuos("Plasticos"));
+    tipos_de_residuos.push_back(Residuos("Vidro"));
+    tipos_de_residuos.push_back(Residuos("Lixo Hospitalar"));
+
+    std::cout << "\n-----LISTA DE RESIDUOS -----\n";
+
+    /* for (int i=0; i < tipos_de_residuos.size(); i++)
+    {
+        std::cout << i << ". " << tipos_de_residuos[i];
+    } */
+
+}
 
 int main()
 {
     char c = 0;
-    std::string _nome =  "";
+    std::string _nome;
     std::string _aux;
+    std::string _residuo;
 
 
     while (c != 'n')
     {
         std::cout << "-----BEM VINDO AO SISTEMA DE COLETA DE RESIDUOS! DESEJA SE CADASTRAR?-----" << std::endl;
-        std::cout << "Digite 's' para SIM e digite 'n' para NAO." << std::endl;
+        std::cout << "\nDigite 's' para SIM e digite 'n' para NAO.\n" << std::endl;
         std::cin >> c;
 
         if (c == 'n')
@@ -28,7 +49,7 @@ int main()
 
         if (c == 's')
         {
-            std::cout << "Digite seu nome completo: ";
+            std::cout << "\nDigite seu nome completo: ";
             std::cin.ignore();
             std::getline(std::cin, _nome);
 
@@ -43,7 +64,21 @@ int main()
                 std::cout << "\nDigite seu CPF: ";
                 std::cin >> _aux;
 
-                pessoa_fisica.push_back(Fisica(_nome, _aux));   
+                std::cout << "\nVoce deseja ser doador ou receptor de residuos?" << std::endl;
+                std::cout << std::endl;
+                std::cout << "1. Doador" << std::endl;
+                std::cout << "2. Receptor\n" << std::endl;
+                std::cin >> c;
+
+                if (c == '1')
+                {
+                    std::cout << "\nQual o material que voce deseja doar?\n";
+                    exibir_lista_residuos();
+
+                }
+
+                
+
             }
 
             if (c == '2')
@@ -51,9 +86,18 @@ int main()
                 std::cout << "\nDigite seu CNPJ: ";
                 std::cin >> _aux;
 
-                pessoa_juridico.push_back(Juridico(_nome, _aux));
-            }
+                std::cout << "\nVoce deseja ser doador ou receptor de residuos?" << std::endl;
+                std::cout << std::endl;
+                std::cout << "1. Doador" << std::endl;
+                std::cout << "2. Receptor\n" << std::endl;
+                std::cin >> c;
 
+                if (c == '1')
+                {
+                    std::cout << "\nQual o material que voce deseja doar? ";
+                    exibir_lista_residuos();
+                }
+            }
         }
     }
 
