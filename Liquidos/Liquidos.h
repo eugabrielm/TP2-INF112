@@ -5,14 +5,9 @@
 
 class Liquidos : public Residuos
 {
-private:
-std::string descricao;
-
 public:
+    Liquidos(std::string nome, std::string descricao);
+    ~Liquidos();
 
-Liquidos(std::string nome,std::string _descricao);
-~Liquidos();
-
-void descricao_residuo() override;
-
+    /* virtual void descricao_residuo() override; */
 };

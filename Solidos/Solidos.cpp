@@ -3,17 +3,16 @@
 #include <string>
 #include "../Residuos/Residuos.h"
 
-Solidos::Solidos(std::string nome,std::string _descricao):Residuos(nome){
+Solidos::Solidos(std::string nome,std::string descricao):
+Residuos(nome,descricao){};
 //set_residuos(nome);
-descricao = _descricao;
+
+Solidos::~Solidos()
+{
 }
 
-Solidos::~Solidos(){
-
-}
-
-void Solidos::descricao_residuo(){
+/* void Solidos::descricao_residuo(){
 
 std::cout << "\nO metodo de descarte deste Solido é: \n";
-std::cout << descricao << std::endl;
-}
+std::cout << _descricao << std::endl;
+} */

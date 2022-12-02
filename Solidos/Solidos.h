@@ -6,14 +6,9 @@
 
 class Solidos : public Residuos
 {
-private:
-
-    std::string descricao;
-    
-
 public:
-    Solidos(std::string _nome, std::string _descricao);
+    Solidos(std::string nome, std::string descricao);
     ~Solidos();
 
-    void descricao_residuo() override;
+   /*  virtual void descricao_residuo() override; */
 };
